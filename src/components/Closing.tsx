@@ -35,11 +35,15 @@ export function Download() {
         Install Bunker.
       </h2>
       <p class="lead mt-5">
-        Add our F-Droid repository at foss.rotko.net for updates, or download the signed APK from
-        GitHub. Both carry the same signing key. Start on BNB Smart Chain Testnet with a small amount
-        before you move real funds.
+        Download the signed APK directly from bunker.rotko.net, add our F-Droid repository at
+        foss.rotko.net for updates, or get it from GitHub. All three carry the same signing key.
+        Start on BNB Smart Chain Testnet with a small amount before you move real funds.
       </p>
-      <div class="mt-10 grid gap-5 md:grid-cols-2">
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <Channel
+          {...RELEASE.direct}
+          note="Signed APK served from bunker.rotko.net, with SHA256SUMS and SHA256SUMS.sig alongside it. Copy it across to the bunker phone before sealing it."
+        />
         <Channel
           {...RELEASE.fdroid}
           note="Add the repo to the F-Droid app on an online phone, or download the APK and copy it across before sealing the bunker phone."

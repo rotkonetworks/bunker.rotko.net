@@ -23,7 +23,10 @@ export default function Hero() {
             has no internet permission. Free and open source.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="https://foss.rotko.net/#bunker" class="btn btn-primary">
+            <a href="https://bunker.rotko.net/Bunker-v0.1.2.apk" class="btn btn-primary">
+              Download APK
+            </a>
+            <a href="https://foss.rotko.net/#bunker" class="btn btn-ghost">
               Get it on F-Droid
             </a>
             <a href="https://github.com/rotkonetworks/bunker/releases/latest" class="btn btn-ghost">

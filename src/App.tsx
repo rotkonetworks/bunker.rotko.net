@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import { Problem, SupplyChain } from "./components/Threats";
 import { Idea, How, ClearSigning, Signs, Security, Setup, Compare, WhyNow } from "./components/Product";
 import { Download, Faq, Footer } from "./components/Closing";
+import { Demo } from "./components/Demo";
 import { Hazard } from "./components/ui";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Nav />
       <main id="main">
         <Hero />
+        <Demo />
         <Hazard />
         <Problem />
         <SupplyChain />

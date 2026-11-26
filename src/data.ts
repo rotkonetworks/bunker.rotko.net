@@ -55,6 +55,12 @@ export type Source = { label: string; url: string };
 
 // Release locations.
 export const RELEASE = {
+  direct: {
+    live: true,
+    label: "Direct APK",
+    host: "bunker.rotko.net",
+    url: "https://bunker.rotko.net/Bunker-v0.1.2.apk",
+  },
   fdroid: {
     live: true,
     label: "F-Droid repo",
