@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204 40" width="204" height="40">
+  <!-- BUNKER, stencil letterforms drawn as paths. Cap height 40, stroke 8,
+       stencil gap 3 between each stem and the rest of the letter. -->
+  <g transform="translate(0,0)"><!-- B -->
+    <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M11,0H15A12,12 0 0 1 15,24H11Z M11,8H15A4,4 0 0 1 15,16H11Z"/>
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M11,16H17A12,12 0 0 1 17,40H11Z M11,24H17A4,4 0 0 1 17,32H11Z"/>
+  </g>
+  <g transform="translate(35,0)"><!-- U -->
+    <path fill="#FFFFFF" d="M0,0H8V26A6,6 0 0 0 12.5,31.81V39.92A14,14 0 0 1 0,26Z"/>
+    <path fill="#FFFFFF" d="M28,0H20V26A6,6 0 0 1 15.5,31.81V39.92A14,14 0 0 0 28,26Z"/>
+  </g>
+  <g transform="translate(69,0)"><!-- N -->
+    <path fill="#FFFFFF" d="M0,0H10L32,40H22Z"/>
+    <path fill="#FFFFFF" d="M0,6.2L8,20.7V40H0Z"/>
+    <path fill="#FFFFFF" d="M32,33.8L24,19.3V0H32Z"/>
+  </g>
+  <g transform="translate(107,0)"><!-- K -->
+    <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+    <path fill="#FFFFFF" d="M21,0H31L17.5,20L31,40H21L11,24V16Z"/>
+  </g>
+  <g transform="translate(144,0)"><!-- E -->
+    <path fill="#FFFFFF" d="M0,0H8V40H0Z M11,0H24V8H11Z M11,16H22V24H11Z M11,32H24V40H11Z"/>
+  </g>
+  <g transform="translate(174,0)"><!-- R -->
+    <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M11,0H17A12,12 0 0 1 17,24H11Z M11,8H17A4,4 0 0 1 17,16H11Z"/>
+    <path fill="#FFFFFF" d="M15,24H24L30,40H21Z"/>
+  </g>
+</svg>

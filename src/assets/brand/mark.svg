@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 24 48 52" width="48" height="52">
+  <!-- The mark alone, cropped to its bounds, for in-app use. -->
+  <path fill="#F0B90B" fill-rule="evenodd" d="M30,76V48A24,24 0 0 1 78,48V76Z M54,33A17,17 0 1 0 54,67A17,17 0 1 0 54,33Z M54,37A13,13 0 1 0 54,63A13,13 0 1 0 54,37Z M47,47.5H63V52.5H47Z"/>
+  <path fill="#F0B90B" d="M36,39H45V45H36Z M36,55H45V61H36Z"/><!-- hinges -->
+</svg>

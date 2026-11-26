@@ -1,0 +1,122 @@
+name: deploy
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+env:
+  CONTAINER_NAME: bunker-net
+  # TODO(maintainer): choose a free host port on www.rotko.net and set it here.
+  # Must not collide with other containers (e.g. zigner-net uses 55556).
+  # The guard step below refuses to deploy while this is empty.
+  CONTAINER_PORT: ""
+  PROJECT_DIR: bunker.rotko.net
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: guard
+        run: |
+          if [ -z "$CONTAINER_PORT" ]; then
+            echo "CONTAINER_PORT is not set in .github/workflows/deploy.yml; refusing to deploy"
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: build
+        run: |
+          npm ci
+          npm run build
+          if [ ! -f dist/index.html ]; then
+            echo "build failed: no index.html"
+            exit 1
+          fi
+          tar czf site.tar.gz dist/
+
+      - name: setup ssh
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H www.rotko.net >> ~/.ssh/known_hosts
+
+      - name: deploy
+        run: |
+          scp -i ~/.ssh/id_deploy site.tar.gz deploy@www.rotko.net:/tmp/bunker-site.tar.gz
+          ssh -i ~/.ssh/id_deploy deploy@www.rotko.net \
+            CONTAINER_NAME="$CONTAINER_NAME" CONTAINER_PORT="$CONTAINER_PORT" PROJECT_DIR="$PROJECT_DIR" \
+            bash -s <<'EOF_REMOTE'
+          set -e
+          cd /home/deploy
+
+          cat > nginx-bunker.conf << 'NGINX_EOF'
+          server {
+              listen 80;
+              server_name localhost;
+              root /usr/share/nginx/html;
+              index index.html;
+
+              gzip on;
+              gzip_vary on;
+              gzip_min_length 1024;
+              gzip_types text/plain text/css text/xml text/javascript application/javascript application/json image/svg+xml;
+
+              location /assets/ {
+                  expires 1y;
+                  add_header Cache-Control "public, immutable";
+                  add_header X-Content-Type-Options "nosniff" always;
+              }
+
+              location / {
+                  try_files $uri $uri/ /index.html;
+              }
+
+              add_header Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'" always;
+              add_header X-Frame-Options "DENY" always;
+              add_header X-Content-Type-Options "nosniff" always;
+              add_header Referrer-Policy "no-referrer" always;
+              add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()" always;
+          }
+          NGINX_EOF
+
+          rm -rf dist
+          tar xzf /tmp/bunker-site.tar.gz
+          mkdir -p "$PROJECT_DIR"
+          rm -rf "${PROJECT_DIR:?}"/*
+          mv dist/* "$PROJECT_DIR"/
+
+          podman stop "$CONTAINER_NAME" 2>/dev/null || true
+          podman rm "$CONTAINER_NAME" 2>/dev/null || true
+
+          podman run -d \
+            --name "$CONTAINER_NAME" \
+            -p 127.0.0.1:"$CONTAINER_PORT":80 \
+            -v /home/deploy/"$PROJECT_DIR":/usr/share/nginx/html:ro,Z \
+            -v /home/deploy/nginx-bunker.conf:/etc/nginx/conf.d/default.conf:ro,Z \
+            --restart unless-stopped \
+            nginx:alpine
+
+          sleep 2
+          if ! podman ps | grep -q "$CONTAINER_NAME"; then
+            echo "container failed to start"
+            podman logs "$CONTAINER_NAME"
+            exit 1
+          fi
+
+          curl -f "http://127.0.0.1:$CONTAINER_PORT/" > /dev/null || {
+            echo "site not responding"
+            podman logs "$CONTAINER_NAME"
+            exit 1
+          }
+
+          rm -f /tmp/bunker-site.tar.gz
+          rm -rf dist/
+          echo "deploy ok"
+          EOF_REMOTE

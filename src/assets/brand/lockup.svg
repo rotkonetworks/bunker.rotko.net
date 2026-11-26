@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 52" width="268" height="52">
+  <!-- Horizontal lockup: mark (48x52) + 16 gap + wordmark (204x40), centred. -->
+  <g transform="translate(-30,-24)">
+    <path fill="#F0B90B" fill-rule="evenodd" d="M30,76V48A24,24 0 0 1 78,48V76Z M54,33A17,17 0 1 0 54,67A17,17 0 1 0 54,33Z M54,37A13,13 0 1 0 54,63A13,13 0 1 0 54,37Z M47,47.5H63V52.5H47Z"/>
+    <path fill="#F0B90B" d="M36,39H45V45H36Z M36,55H45V61H36Z"/>
+  </g>
+  <g transform="translate(64,6)">
+    <g transform="translate(0,0)"><!-- B -->
+      <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+      <path fill="#FFFFFF" fill-rule="evenodd" d="M11,0H15A12,12 0 0 1 15,24H11Z M11,8H15A4,4 0 0 1 15,16H11Z"/>
+      <path fill="#FFFFFF" fill-rule="evenodd" d="M11,16H17A12,12 0 0 1 17,40H11Z M11,24H17A4,4 0 0 1 17,32H11Z"/>
+    </g>
+    <g transform="translate(35,0)"><!-- U -->
+      <path fill="#FFFFFF" d="M0,0H8V26A6,6 0 0 0 12.5,31.81V39.92A14,14 0 0 1 0,26Z"/>
+      <path fill="#FFFFFF" d="M28,0H20V26A6,6 0 0 1 15.5,31.81V39.92A14,14 0 0 0 28,26Z"/>
+    </g>
+    <g transform="translate(69,0)"><!-- N -->
+      <path fill="#FFFFFF" d="M0,0H10L32,40H22Z"/>
+      <path fill="#FFFFFF" d="M0,6.2L8,20.7V40H0Z"/>
+      <path fill="#FFFFFF" d="M32,33.8L24,19.3V0H32Z"/>
+    </g>
+    <g transform="translate(107,0)"><!-- K -->
+      <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+      <path fill="#FFFFFF" d="M21,0H31L17.5,20L31,40H21L11,24V16Z"/>
+    </g>
+    <g transform="translate(144,0)"><!-- E -->
+      <path fill="#FFFFFF" d="M0,0H8V40H0Z M11,0H24V8H11Z M11,16H22V24H11Z M11,32H24V40H11Z"/>
+    </g>
+    <g transform="translate(174,0)"><!-- R -->
+      <path fill="#FFFFFF" d="M0,0H8V40H0Z"/>
+      <path fill="#FFFFFF" fill-rule="evenodd" d="M11,0H17A12,12 0 0 1 17,24H11Z M11,8H17A4,4 0 0 1 17,16H11Z"/>
+      <path fill="#FFFFFF" d="M15,24H24L30,40H21Z"/>
+    </g>
+  </g>
+</svg>
