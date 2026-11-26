@@ -30,7 +30,7 @@ export function Download() {
   const signers = `echo '${RELEASE.signerIdentity} ${RELEASE.signerKey}' > allowed_signers`;
   return (
     <Section id="download" tone="concrete">
-      <Kicker>10 · Download</Kicker>
+      <Kicker>11 · Download</Kicker>
       <h2 id="download-h" class="max-w-[46rem]">
         Coming soon. Pre-release today.
       </h2>
@@ -47,7 +47,7 @@ export function Download() {
         <Channel {...RELEASE.github} note="Signed APK with SHA256SUMS and SHA256SUMS.sig attached to each release." />
       </div>
 
-      <div class="mt-12 max-w-[50rem]">
+      <div class="mt-12">
         <h3 class="text-[1.2em]">Verify before you install</h3>
         <p class="mt-3 muted">
           Each release ships the APK with <code>SHA256SUMS</code> and <code>SHA256SUMS.sig</code>, signed
@@ -103,7 +103,8 @@ const FAQ: [string, () => any][] = [
     () => (
       <p>
         Android 8 or newer, with a working camera. Phones with a StrongBox security chip keep the key there;
-        others use the phone's TEE. A fingerprint reader is convenient; a PIN also works.
+        others use the phone's TEE. A fingerprint reader is convenient, but set a strong device passphrase too. See{" "}
+        <a href="#setup">Recommended setup</a> for which phones we suggest.
       </p>
     ),
   ],
@@ -139,7 +140,7 @@ const FAQ: [string, () => any][] = [
 export function Faq() {
   return (
     <Section id="faq" tone="light">
-      <Kicker>11 · FAQ</Kicker>
+      <Kicker>12 · FAQ</Kicker>
       <h2 id="faq-h">Questions</h2>
       <div class="mt-10 max-w-[52rem]">
         {FAQ.map(([q, a]) => (

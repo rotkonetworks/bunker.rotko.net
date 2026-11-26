@@ -11,8 +11,8 @@ export function Idea() {
         Your old phone becomes the bunker.
       </h2>
       <p class="lead mt-5">
-        That phone in the drawer already has a camera, a screen, a fingerprint reader and a hardware
-        security chip. Take it off the network for good and it can hold your keys.
+        That phone in the drawer already has a camera, a screen, a fingerprint reader and a hardware-backed
+        keystore. Take it off the network for good and it can hold your keys.
       </p>
       <ol class="steps mt-10">
         <li class="step plate">
@@ -327,14 +327,14 @@ export function Compare() {
   const rows: [string, string, string, string][] = [
     ["Where the key lives", "On the computer you browse with", "In a dedicated secure element", "In an offline phone, encrypted under StrongBox or TEE"],
     ["Network exposure", "Online all the time", "None; connects by USB or Bluetooth", "None; no internet permission, QR codes only"],
-    ["Resistance to physical attack", "None", "Best: chips built to resist lab attacks", "Good: phone security chip, but not a wallet-grade secure element"],
+    ["Resistance to physical attack", "None", "Best: chips built to resist lab attacks", "Good: the phone's StrongBox chip or TEE, but not a wallet-grade secure element"],
     ["Supply chain", "Download from an extension store", "A device shipped to you, which can be tampered with in transit", "Software you install on a phone you already own, checked by signature"],
     ["What you see before signing", "A web page in the same browser as the attacker", "A small screen; clear signing varies by app", "A full phone screen; refuses what it can't show"],
     ["Cost", "Free", "Buy a device", "Free, on a phone you already have"],
   ];
   return (
     <Section id="compare" tone="light">
-      <Kicker>08 · Comparison</Kicker>
+      <Kicker>09 · Comparison</Kicker>
       <h2 id="compare-h" class="max-w-[46rem]">
         Hardware-wallet separation at old-phone price.
       </h2>
@@ -379,7 +379,7 @@ export function Compare() {
 export function WhyNow() {
   return (
     <Section id="why" tone="dark">
-      <Kicker>09 · Why now</Kicker>
+      <Kicker>10 · Why now</Kicker>
       <div class="grid gap-10 md:grid-cols-[1fr_1.2fr] items-center">
         <div>
           <p class="stat !text-[clamp(4rem,14vw,8rem)]">709+</p>
@@ -395,6 +395,79 @@ export function WhyNow() {
             clock too. Bunker clear-signs Ondo tokenized-stock buy and sell orders, so you see the order
             before you approve it.
           </p>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+// Claims in this section were supplied by the maintainer; keep them exact.
+// Titan M2 ships in Pixel 6 and later (not Pixel 8 only). No attestation
+// claims: Bunker does not do device attestation yet.
+export function Setup() {
+  const tiers: [string, string, string, string][] = [
+    [
+      "Best",
+      "Pixel 8 or newer with GrapheneOS",
+      "chip-yes",
+      "Titan M2 chip, hardware memory tagging, hardened OS.",
+    ],
+    [
+      "Good",
+      "Pixel 6 or newer",
+      "chip-wip",
+      "The Titan M2 holds the seed key; Bunker asks for StrongBox.",
+    ],
+    [
+      "Works",
+      "Any Android 8 or newer",
+      "chip-plain",
+      "The key is kept in the phone's TEE. Bunker's Settings shows which storage it got.",
+    ],
+  ];
+  return (
+    <Section id="setup" tone="dark">
+      <Kicker>08 · Recommended setup</Kicker>
+      <h2 id="setup-h" class="max-w-[46rem]">
+        Any old Android works. Some work better.
+      </h2>
+      <ol class="mt-10 grid gap-5 md:grid-cols-3">
+        {tiers.map(([tier, phone, chip, body]) => (
+          <li class="plate !pt-7">
+            <span class={`chip ${chip}`}>{tier}</span>
+            <h3 class="mt-3 text-[1.15em]">{phone}</h3>
+            <p class="mt-2">{body}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="mt-12 grid gap-10 md:grid-cols-2">
+        <div>
+          <h3 class="text-[1.2em]">How Bunker uses the chip</h3>
+          <p class="mt-3">
+            Bunker generates the seed-encryption key inside StrongBox where it is available. The key can't
+            be exported, and each signature needs your PIN or fingerprint.
+          </p>
+          <h3 class="text-[1.2em] mt-8">Why GrapheneOS</h3>
+          <ul class="mt-3 grid gap-2 list-disc pl-6">
+            <li>Verified boot of its own signed system, with the bootloader locked.</li>
+            <li>A hardened memory allocator.</li>
+            <li>Memory tagging (MTE) on Pixel 8 and newer.</li>
+            <li>No Google Play services by default.</li>
+          </ul>
+        </div>
+        <div class="plate !pt-7">
+          <h3 class="text-[1.2em]">Setup tips</h3>
+          <ul class="warn-list mt-4 grid gap-4">
+            <li>
+              <strong>A strong device passphrase</strong>, not only a fingerprint.
+            </li>
+            <li>
+              <strong>Airplane mode with every radio off</strong>: Wi-Fi, Bluetooth, NFC and mobile data.
+            </li>
+            <li>
+              <strong>Charge from a wall adapter</strong>, never from a computer.
+            </li>
+          </ul>
         </div>
       </div>
     </Section>

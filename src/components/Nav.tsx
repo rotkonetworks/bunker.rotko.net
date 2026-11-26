@@ -3,6 +3,7 @@ import lockup from "../assets/brand/lockup.svg";
 const links = [
   ["#how", "How it works"],
   ["#security", "Security"],
+  ["#setup", "Setup"],
   ["#compare", "Compare"],
   ["#faq", "FAQ"],
 ];

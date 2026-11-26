@@ -47,7 +47,7 @@ export const SRC = {
   },
   erc7730Registry: {
     label: "ERC-7730 registry",
-    url: "https://github.com/LedgerHQ/clear-signing-erc7730-registry",
+    url: "https://github.com/ethereum/clear-signing-erc7730-registry",
   },
 } as const;
 

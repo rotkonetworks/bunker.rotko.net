@@ -53,7 +53,7 @@ export function SupplyChain() {
             In October 2026, Ledger devices sold by the Southeast Asian reseller CryptoBilis were found to
             carry a hidden cellular implant. It read the 24-word recovery phrase off the screen during
             setup and sent it out over the mobile network.
-            <Src s={[SRC.ledgerCoindesk, SRC.ledgerHalborn]} />
+            <Src s={SRC.ledgerCoindesk} />
           </p>
           <p>
             Ledger's Genuine Check verifies the secure chip, so it cannot detect an added implant that
@@ -66,7 +66,7 @@ export function SupplyChain() {
           <p class="mt-3">
             estimated losses from more than 300 wallets, according to on-chain researchers. Ledger has
             not confirmed a total.
-            <Src s={[SRC.ledgerCoindeskRange, SRC.ledgerCoindesk]} />
+            <Src s={[SRC.ledgerCoindeskRange, SRC.ledgerCoindesk, SRC.ledgerHalborn]} />
           </p>
         </div>
       </div>
