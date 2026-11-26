@@ -35,6 +35,7 @@ export default function Hero() {
           </div>
           <p class="mt-8">
             <span class="badge">Version 0.1</span>
+            <span class="muted ml-3 text-[0.9em] inline-block">by <a href="https://rotko.net" rel="noopener">Rotko Networks</a></span>
             <span class="muted ml-3 text-[0.9em] inline-block">Android 8 or newer · <span class="whitespace-nowrap">Apache-2.0</span></span>
           </p>
         </div>
