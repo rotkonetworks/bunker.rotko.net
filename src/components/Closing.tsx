@@ -99,6 +99,18 @@ const FAQ: [string, () => any][] = [
     ),
   ],
   [
+    "Can I split my backup so no single paper holds it?",
+    () => (
+      <p>
+        Coming in the first release: Bunker can restore a 24-word phrase from Banana Split QR shares. Create
+        them at <a href="https://bs.parity.io" rel="noopener noreferrer">bs.parity.io</a>, ideally on a
+        computer that is offline while you use it, since the phrase is typed into that page. For new wallets,
+        Bunker can also split the secret into SLIP-39 word shares (for example any 2 of 3) on the phone itself,
+        restorable in Bunker, Trezor or Keystone. A SLIP-39 wallet has no 24-word form.
+      </p>
+    ),
+  ],
+  [
     "Which phones work?",
     () => (
       <p>
