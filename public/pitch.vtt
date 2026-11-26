@@ -1,0 +1,291 @@
+WEBVTT
+
+00:00.740 --> 00:02.386
+On the 29th of October,
+
+00:02.386 --> 00:07.540
+attackers drained $6.3 billion from
+Binance's hot wallets in one attack.
+
+00:07.580 --> 00:10.528
+It is the largest crypto theft on record,
+
+00:10.528 --> 00:13.980
+attributed to North Korea's TraderTraitor
+group.
+
+00:14.020 --> 00:18.620
+The keys sat on internet-connected machines,
+and they got taken.
+
+00:18.660 --> 00:27.270
+It isn't alone. In 2026 so far, over 8
+billion has been stolen in over 300 hacks.
+
+00:27.310 --> 00:30.440
+It's a record year, with a month still to
+go.
+
+00:30.740 --> 00:36.740
+If the biggest exchange can't keep online
+keys safe, neither can a browser extension.
+
+00:36.780 --> 00:39.260
+The only safe key is the offline key.
+
+00:41.863 --> 00:44.593
+And even the hardware wallets have a weak
+spot:
+
+00:44.633 --> 00:46.093
+the box they ship in.
+
+00:46.133 --> 00:47.161
+In October 2026,
+
+00:47.161 --> 00:51.593
+Ledger devices sold by reseller CryptoBilis
+carried a hidden implant.
+
+00:51.633 --> 00:56.793
+It read the 24 words off the screen and sent
+them out over the mobile network.
+
+00:56.833 --> 01:02.093
+Between $86 and $93 million was stolen.
+
+01:02.133 --> 01:04.293
+And Ledger's Genuine Check couldn't catch
+it.
+
+01:04.333 --> 01:06.293
+It checks only the secure chip.
+
+01:06.333 --> 01:09.833
+With Bunker, there is no device in the mail
+to intercept.
+
+01:11.350 --> 01:13.950
+So what is the solution? Go offline.
+
+01:13.990 --> 01:18.800
+Bunker turns the old Android phone in your
+drawer into a hardware wallet.
+
+01:19.080 --> 01:20.900
+Any phone with Android 8 or newer works.
+
+01:21.460 --> 01:23.570
+No new device to buy or ship.
+
+01:23.610 --> 01:29.310
+Seal it. With airplane mode on, Wi-Fi,
+Bluetooth and NFC off.
+
+01:29.350 --> 01:32.190
+The app has no internet permissions at all.
+
+01:32.230 --> 01:36.060
+Bunker's banner turns from Exposed to
+Bunker.
+
+01:38.810 --> 01:42.140
+So how does it work? There are two QR codes:
+no cable, no Bluetooth, no network.
+
+01:42.180 --> 01:44.610
+You need a wallet, like MetaMask or Rabby.
+
+01:44.610 --> 01:49.180
+It builds the raw transaction and shows it
+as an animated QR code to the phone.
+
+01:49.220 --> 01:52.100
+You scan it with the phone and decode it.
+
+01:52.540 --> 01:57.840
+It decodes it on the device for you to read
+the amount, where it's sent, and the fee.
+
+01:57.880 --> 02:01.200
+Then you approve it with your fingerprint or
+PIN code, and the phone signs it.
+
+02:01.240 --> 02:05.060
+After that, you show the QR code back to
+your device's camera.
+
+02:05.850 --> 02:07.860
+Then you just need to broadcast the
+transaction.
+
+02:07.900 --> 02:12.040
+The recovery phrase on your phone never
+leaves. It's always there.
+
+02:13.497 --> 02:14.357
+Clear signing.
+
+02:14.397 --> 02:18.497
+Blind signing is how most wallet drains
+happen. Bunker never does that.
+
+02:18.537 --> 02:22.447
+It decodes every transaction on the phone,
+and computes what gets signed itself.
+
+02:22.487 --> 02:26.605
+Every argument of a contract call is shown.
+Unknown tokens,
+
+02:26.605 --> 02:29.817
+unlimited approvals and high fees are
+flagged.
+
+02:29.857 --> 02:33.849
+Anything it can't show in full is refused,
+and never blind-signed.
+
+02:33.849 --> 02:35.967
+That's the only way to stay secure.
+
+02:36.007 --> 02:42.028
+It covers BNB and BEP-20 transfers, and
+swaps on KyberSwap,
+
+02:42.028 --> 02:46.927
+Velora and 1inch via the open ERC-7730
+registry,
+
+02:46.967 --> 02:50.007
+and Ondo and xStocks tokenized stocks.
+
+02:51.353 --> 02:52.267
+Hardware-sealed seed.
+
+02:52.267 --> 02:55.573
+The recovery phrase is encrypted under a key
+in the phone's secure hardware:
+
+02:55.823 --> 02:59.353
+StrongBox or the TEE, as long as your phone
+supports this.
+
+02:59.393 --> 03:01.433
+Each signature needs your fingerprint or
+PIN.
+
+03:01.883 --> 03:04.818
+The best is Pixel 8 or newer with
+GrapheneOS: Titan M2 chip,
+
+03:04.818 --> 03:06.433
+memory tagging and a hardened OS.
+
+03:07.433 --> 03:12.313
+Anything from Pixel 6 or later, where the
+Titan M2 holds the seed key, is great.
+
+03:12.923 --> 03:15.771
+And if you are not afraid of a physical
+attack,
+
+03:15.771 --> 03:18.073
+any old Android phone is totally fine.
+
+03:18.113 --> 03:20.013
+They keep you offline and secure.
+
+03:20.053 --> 03:21.718
+Every QR is treated as an attack,
+
+03:21.718 --> 03:24.493
+and the code is open source under the Apache
+2 license.
+
+03:25.930 --> 03:27.680
+And what is the challenging part?
+
+03:27.720 --> 03:30.320
+Well, clear signing only works if it's up to
+date,
+
+03:30.360 --> 03:33.440
+and an offline device is really hard to
+update.
+
+03:33.480 --> 03:35.632
+We don't have this feature yet,
+
+03:35.632 --> 03:39.520
+but in the future we're going to enable QR
+code updates.
+
+03:39.560 --> 03:43.286
+So by scanning, like, hundreds of QR codes,
+
+03:43.286 --> 03:47.360
+we plan to bring the phone's runtime up to
+date
+
+03:47.400 --> 03:49.840
+to support all the changes in the DEXs.
+
+03:49.880 --> 03:55.700
+So there is no need to reinstall the whole
+phone again when you need to update.
+
+03:57.140 --> 04:02.960
+Why now? Over 700 tokenized stocks and ETFs
+trade 24/7 on BNB Chain.
+
+04:03.000 --> 04:08.960
+Ondo, xStocks and Binance's own bStocks
+bring real-world equities on-chain.
+
+04:09.000 --> 04:12.072
+People holding their portfolio in
+self-custody need
+
+04:12.072 --> 04:14.000
+a vault that is safe and simple.
+
+04:17.176 --> 04:19.026
+So, what does the roadmap look like?
+
+04:19.066 --> 04:22.207
+The signing core and Android app are built,
+
+04:22.207 --> 04:27.026
+and I have done my security review on the
+code, and initial fixes.
+
+04:27.066 --> 04:33.546
+There is a testnet beta, and there are
+backups for SLIP-39 and even Banana Split,
+
+04:33.546 --> 04:36.026
+to split your 24-word mnemonic.
+
+04:36.066 --> 04:41.246
+What is planned next? The first release,
+distributed on F-Droid and GitHub.
+
+04:41.286 --> 04:47.066
+And if we get funded, hopefully external
+audits and a bug bounty will be in place.
+
+04:47.176 --> 04:50.686
+And in the longer term, the core work has to
+be on updatability.
+
+04:52.076 --> 04:55.366
+So: an old phone, airplane mode, MetaMask
+over QR codes.
+
+04:56.586 --> 04:57.686
+Keep your keys bunkered.
+
+04:57.726 --> 05:01.666
+Visit bunker.rotko.net for the initial
+release.

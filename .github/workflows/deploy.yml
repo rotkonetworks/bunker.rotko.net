@@ -78,6 +78,12 @@ jobs:
                   try_files $uri $uri/ /index.html;
               }
 
+              # The pitch video and its subtitles, opened directly.
+              location ~ ^/pitch\.(mp4|vtt)$ {
+                  add_header X-Content-Type-Options "nosniff" always;
+                  add_header Referrer-Policy "no-referrer" always;
+              }
+
               # The pitch deck is a self-contained export with its own inline viewer script.
               location = /presentation.html {
                   add_header Content-Security-Policy "default-src 'none'; script-src 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' data: blob:; frame-src about:; child-src about:; worker-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'" always;
