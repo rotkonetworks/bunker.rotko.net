@@ -10,7 +10,7 @@ env:
   # TODO(maintainer): choose a free host port on www.rotko.net and set it here.
   # Must not collide with other containers (e.g. zigner-net uses 55556).
   # The guard step below refuses to deploy while this is empty.
-  CONTAINER_PORT: ""
+  CONTAINER_PORT: 55572
   PROJECT_DIR: bunker.rotko.net
 
 jobs:
