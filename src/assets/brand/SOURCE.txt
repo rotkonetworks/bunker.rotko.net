@@ -1,4 +1,4 @@
-Copied from /steam/rotko/bigner/brand/svg/ on 2026-11-26 (mark, wordmark,
+Copied from /steam/rotko/bunker/brand/svg/ on 2026-11-26 (mark, wordmark,
 lockup, ic_sealed, ic_exposed). That directory was still untracked work in
 progress. If the brand changes, copy the new SVGs over these files and
 re-render public/og.png, favicon.png and apple-touch-icon.png.
