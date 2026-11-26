@@ -53,23 +53,21 @@ export const SRC = {
 
 export type Source = { label: string; url: string };
 
-// Release locations. Placeholders until the first release: set `live: true`
-// and fill in the URL when the APK is actually published there.
+// Release locations.
 export const RELEASE = {
   fdroid: {
-    live: false,
+    live: true,
     label: "F-Droid repo",
     host: "foss.rotko.net",
-    url: "https://foss.rotko.net/fdroid/repo", // TODO: confirm Bunker is listed before enabling
+    url: "https://foss.rotko.net/#bunker",
   },
   github: {
-    live: false,
+    live: true,
     label: "GitHub Releases",
-    host: "github.com/rotkonetworks",
-    url: "", // TODO: public repo URL is not decided yet
+    host: "github.com/rotkonetworks/bunker",
+    url: "https://github.com/rotkonetworks/bunker/releases/latest",
   },
-  // TODO: the release signing key for Bunker is not published yet. Fill in the
-  // allowed_signers line (identity + ssh-ed25519 key) with the first release.
-  signerIdentity: "<release identity>",
-  signerKey: "<ssh-ed25519 key, published with the first release>",
+  signerIdentity: "release@rotko.net",
+  signerKey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0+JfF50nSlAguayT98Y72VbDlHpACf6m8s1gALvV5s",
+  certSha256: "d728121670177cc1760883c755a692067b455faab015e0ba13c0a5d43031c340",
 };

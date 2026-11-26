@@ -32,12 +32,12 @@ export function Download() {
     <Section id="download" tone="concrete">
       <Kicker>11 · Download</Kicker>
       <h2 id="download-h" class="max-w-[46rem]">
-        Coming soon. Pre-release today.
+        Install Bunker.
       </h2>
       <p class="lead mt-5">
-        The core and the app are built and have had an independent security review, with its findings
-        fixed. On-device testing with MetaMask is next. The first release will be published in two
-        places.
+        Add our F-Droid repository at foss.rotko.net for updates, or download the signed APK from
+        GitHub. Both carry the same signing key. Start on BNB Smart Chain Testnet with a small amount
+        before you move real funds.
       </p>
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         <Channel

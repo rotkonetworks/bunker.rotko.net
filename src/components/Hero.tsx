@@ -23,15 +23,18 @@ export default function Hero() {
             has no internet permission. Free and open source.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="#download" class="btn btn-primary">
-              Download (coming soon)
+            <a href="https://foss.rotko.net/#bunker" class="btn btn-primary">
+              Get it on F-Droid
+            </a>
+            <a href="https://github.com/rotkonetworks/bunker/releases/latest" class="btn btn-ghost">
+              GitHub release
             </a>
             <a href="#how" class="btn btn-ghost">
               How it works
             </a>
           </div>
           <p class="mt-8">
-            <span class="badge">Pre-release</span>
+            <span class="badge">Version 0.1</span>
             <span class="muted ml-3 text-[0.9em] inline-block">Android 8 or newer · <span class="whitespace-nowrap">Apache-2.0</span></span>
           </p>
         </div>
